@@ -1,0 +1,29 @@
+.centered_space {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+.width-fill {
+  width: -webkit-fill-available;
+}
+.w-250 {
+  width: 250px;
+}
+.show_button {
+  height: 32px;
+  background-color: transparent;
+  color: #665d5d;
+  border-radius: 5px;
+  border: 1px solid #c7c6bbe6;
+}
+.table_header {
+  background-color: #ebe7e7;
+  color: #665d5d;
+  font-weight: 600;
+}
+/* .h-400 {
+  min-height: 162px;
+} */
+.h-350 {
+  max-height: 352px !important;
+}
