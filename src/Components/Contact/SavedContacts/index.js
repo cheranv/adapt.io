@@ -3,6 +3,7 @@ import "./styles.css";
 const SavedContacts = () => {
   const [savedContacts, setSavedContacts] = useState([]);
   const [allShown, setAllShown] = useState(false);
+  const savedsearches = JSON.parse(localStorage.getItem("savedContacts"));
   useEffect(() => {
     if (localStorage.getItem("savedContacts")) {
       setSavedContacts(
@@ -51,19 +52,22 @@ const SavedContacts = () => {
               <p>No saved contacts</p>
             )}
           </div>
-          <button
-            className="m-t-b-20 show_button flex-box m-s-auto"
-            onClick={() => {
-              setSavedContacts(
-                JSON.parse(localStorage.getItem("savedContacts"))
-              );
-              setAllShown(true);
-            }}
-            style={{ display: allShown ? "none" : "flex" }}
-          >
-            show all {JSON.parse(localStorage.getItem("savedContacts")).length}{" "}
-            saved searches
-          </button>
+          {savedsearches && (
+            <button
+              className="m-t-b-20 show_button flex-box m-s-auto"
+              onClick={() => {
+                setSavedContacts(
+                  JSON.parse(localStorage.getItem("savedContacts"))
+                );
+                setAllShown(true);
+              }}
+              style={{ display: allShown ? "none" : "flex" }}
+            >
+              show all{" "}
+              {JSON.parse(localStorage.getItem("savedContacts")).length} saved
+              searches
+            </button>
+          )}
         </div>
       </div>
     </div>
